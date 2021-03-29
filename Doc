@@ -1,0 +1,135 @@
+FIELD/ STREAM OF ENGINEERING OF THE PROJECT :
+
+Related Streams of Engineering:
+Computer Science Engineering
+Electrical and Electronics Engineering
+Electronics and Communication Engineering
+
+PROBLEM STATEMENT :
+Now a days driving or riding a vehicle is a challenge in the roads of India . Especially the motorcycles, which are rated to the most dangerous vehicle in the world. 
+ 
+In India 29% of all accidents are caused by a motorcycle (2015 studies) . And deaths due to Road accidents are rising . 
+Few of the major factors of road accidents are due to : 
+Increases in average speed
+Driving under the influence of alcohol or drugs
+*Inadequate post-crash care
+
+*Inadequate Post-Crash Care
+Delays in detecting and providing care for those involved in a road traffic crash increase the severity of injuries. Care of injuries after a crash has occurred is extremely time-sensitive: delays of minutes can make the difference between life and death. Improving post-crash care requires ensuring access to timely pre-hospital care, and improving the quality of both
+ pre-hospital and hospital care, such as through specialist training programmes.  
+
+These factors worsen in remote area where there is no immediate medical center. 
+"There is one death every four minutes due to a road accident in India. Motorcycles account for 29% of total road crash deaths "
+
+
+
+IDEA :
+Looking on to one the major factor of road accidents , Inadequate Post-Crash Care  is a major are which could be improved .
+The Idea is to introduce a  Accident Detection System onto the helmet that can provide the following functions :
+Accident Detection : Detects accident when a sudden changes in acceleration is 
+detected by using set of accelerometer.
+
+Sends GPS location : Collects Data of the position of incident using GPS .
+
+Sends Alert to nearby Medical services and Traffic Control : The collected data is then send 		to nearby Hospital or any emergency centers for immediate help for the victim of 			the accident . By the time the hospital is ready with the ambulance ,the alert received by the traffic control will help clear a fast route to the accident .
+
+This should be able to drastically reduce the reaction time to the accident and there by improving post-crash care. This can ensure less deaths due to road accidents.
+This could be more useful in remote areas where an accident might even go unnoticed.
+And places like adventurousness spots which many motorcyclist are attracted to can have rough terrain which is mostly hilly areas and medical support there would be weak.
+With the smart helmet we could provide immediate medical help to places where	an accident might go unnoticed .	    		
+
+
+
+
+
+
+WORKING :
+
+The smart helmet consists of 3 parts ;
+Detector : This module contains the Accident Detection System. It contains a set of micro-			controllers, a accelometer and a Bluetooth module. The module is equipped with 
+  a kill switch and a buzzer to stop false alarms. 
+
+Transmitter : Transmitter is the smart phone which will be running a custom application 			concreted to a web server and will be used to connect to the Detector module 			using Bluetooth and to receive GPS location data to send to the receiver.  
+
+Receiver : This module contain a screen, micro-controller and Wi-Fi module and will be 			hosting a web server to receive GPS location data from the Transmitter and and 			display the GPS location on the screen.
+
+So the smart helmet works when the detector detects very high g forces(acceleration of gravity),about 30+ g . When it detects that high g forces it starts ALERT protocol. 
+ALERT protocol :
+If the accelometer detects 30+ g 
+Starts a timer for 15 seconds .(sets off a buzzer for 15s)
+If the kill switch if pressed the process is stooped
+Else GPS data is collected and send to the Receiver 
+To avoid false alarms the transmitter is equipped with a kill switch and a buzzer. When the protocol is triggered by mistake the buzzer goes off and can be stopped .The timer length can be changed .
+
+
+Hardware
+1.Micro-controller - STM32F103C8T6  :
+
+STM32F103C8T6 is a 32-bit micro-controller  based around the same 32-bit ARM processor core .Its a very powerfull and fast micro-controller which is perfect for the accident detection as it needs to do calculations for the g forces fast.  
+
+2.Accelometer - ADXL377  :
+
+The ADXL377 is a complete 3-axis acceleration measurement system with a typical measurement range of ±200 g. We needed a accelometer that could with stand extreme forces therefore range of ±200 g was more than enough.
+
+3.Bluetooth Module - HC-05  :
+
+HC-05 module  is  an  easy  to  use  Bluetooth  SPP  (Serial  Port  Protocol)  module,  designed  for transparent wireless serial connection setup. This will be used to connect to the transmitter (smart phone) .
+
+
+
+
+
+4. Raspberry pi 3 b+ :
+
+The Raspberry Pi 3 Model B is the third generation Raspberry Pi. This powerful credit-card sized single board computer can be used for many applications and supersedes the original Raspberry Pi Model B+ and Raspberry Pi 2 Model B.
+This will be used as Receiver and to host the wb server to get the GPS location data from the transmitter. 
+
+5.Display :
+
+This will be connected to the rasberry pi and will display the location received 
+
+Software
+1.Arduino IDE - Used to program the micro controller.
+
+2.Android studio - Used to develope the transmitter application.
+
+
+
+
+IMPLEMENTATION :
+The Receiver module will be placed on the surface of the back of the helmet.
+It will be removable and portable.
+The Reciver will be held in the hospitals and traffic control.
+COST:
+
+Sl No.	Item	Quantity	Cost (in Rs.)
+1.	STM32F103C8T6	1	260
+2.	ADXL377	1	 2,195
+3	HC-05	1	350
+4	Raspberry pi 3 b+ 	1	2,990
+5	Display	1	1,500
+6	SMD components	-	150
+
+
+
+SOCIAL IMPACT :
+Every year the number of road accidents is increasing.
+1214 road crashes occur every day in India.
+377 people die every day, equivalent to a jumbo jet crashing every day.
+"There is one death every four minutes due to a road accident in India. Motorcycles account for 29% of total road crash deaths "
+So its pretty obvious that something should be done to reduce these deaths…
+I am doing my part….giving my contributions to save lifes…
+The smart helmet can save those few minutes for the victim to get medical help........a few minutes might just be the difference between death and life....
+
+
+
+
+FURTHER ADVANCEMENT :
+The Future Scope of this project will be to implement this as a mandatory device to be built in while the production of helmets. And this can be expanded into all the vehicles of all size .
+
+
+References
+https://sites.ndtv.com/roadsafety/important-feature-to-you-in-your-car-5/
+https://www.jrlawfirm.com/blog/car-accident-g-force/
+https://www.thehindu.com/news/cities/mumbai/helping-patients-get-to-hospital-on-time/article18031300.ece
+chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/src/pdfviewer/web/viewer.html?file=https://www.who.int/violence_injury_prevention/road_traffic/activities/roadsafety_training_manual_unit_5.pdf?ua=1
